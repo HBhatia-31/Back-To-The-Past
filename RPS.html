@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <title>Play Rock Papers Scissors</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div id="Container">
+            <div id="Header">
+                <h1 style="text-align: center;">Welcome to the Rock-Paper-Scissors Game!</h1>
+                <p style="text-align: center;">You are in single player mode</p>
+                <p style="text-align: center;">Your opponent is: The Computer!</p>
+                <ul class="tab2"><i class="fa fa-book" aria-hidden="true"></i> Rules of the Game:</ul>
+                <ul class="tab2">Player  and Computer each select one of Rock, Paper or Scissors</ul>
+                <li class="tab2">Rock wins against Scissor</li>
+                <li class="tab2">Scissor wins against Paper</li>
+                <li class="tab2">Paper wins against Rock</li>
+            </div>
+            <div id="Actual">
+                <p class="tab" style="text-align: center;">Choose one of the following (Note: you can't change your choice later):</p>
+                <a class="by3" id="rock" onclick="PickRock()"><i class="fa fa-hand-rock-o" aria-hidden="true"></i></a>
+                <a class="by3" id="paper" onclick="PickPaper()"><i class="fa fa-hand-paper-o" aria-hidden="true"></i></a>
+                <a class="by3" id="scissor" onclick="PickScissor()"><i class="fa fa-hand-scissors-o" aria-hidden="true"></i></a>
+                <p></p>
+                <div id="pl">
+                    <p class="tab">You Played: <span id="play"></span></p>
+                    <p class="tab">Your Score: <span id="player"> 0 </span></p>
+                </div>
+                <div id="co">
+                    <p class="tab">Computer Played: <span id="comp"></span></p>
+                    <p class="tab">Computer Score: <span id="computer"> 0 </span></p>
+                </div>
+                
+            </div>
+            <div id="Footer">
+                <button class="by2" id="reset" onclick="Reset()"><i class="fa fa-refresh" aria-hidden="true"></i> Play Again</button>
+                <button class="by2" id="reset score" onclick="ResetScore()"><i class="fa fa-retweet" aria-hidden="true"></i> Reset Scores</button>
+            </div>
+        </div>
+        <script>
+            var count = 0;
+            var playerscore = 0
+            var computerscore = 0
+            function PickRock(){
+                if (count ==0) {
+                    document.getElementById("rock").style.backgroundColor="limegreen"
+                    count += 1
+                    var x = Math.floor((Math.random() * 3) + 1)
+                    if (x==2){
+                        computerscore += 1
+                        document.getElementById("comp").innerHTML= "Paper"
+                    } else if (x==3) {
+                        playerscore += 1
+                        document.getElementById("comp").innerHTML= "Scissors"
+                    } else {
+                        document.getElementById("comp").innerHTML= "Rock"
+                    }
+                    document.getElementById("play").innerHTML= "Rock"
+                    document.getElementById("player").innerHTML= playerscore
+                    document.getElementById("computer").innerHTML= computerscore
+                }
+            }
+            function PickPaper(){
+                if (count ==0) {
+                    document.getElementById("paper").style.backgroundColor="limegreen"
+                    count += 1
+                    var x = Math.floor((Math.random() * 3) + 1)
+                    if (x==3){
+                        computerscore += 1
+                        document.getElementById("comp").innerHTML= "Scissors"
+                    } else if (x==1) {
+                        playerscore += 1
+                        document.getElementById("comp").innerHTML= "Rock"
+                    } else {
+                        document.getElementById("comp").innerHTML= "Paper"
+                    }
+                    document.getElementById("play").innerHTML= "Paper"
+                    document.getElementById("player").innerHTML= playerscore
+                    document.getElementById("computer").innerHTML= computerscore
+                }
+            }
+            function PickScissor(){
+                if (count ==0) {
+                    document.getElementById("scissor").style.backgroundColor="limegreen"
+                    count += 1
+                    var x = Math.floor((Math.random() * 3) + 1)
+                    if (x==1){
+                        computerscore += 1
+                        document.getElementById("comp").innerHTML= "Rock"
+                    } else if (x==2) {
+                        playerscore += 1
+                        document.getElementById("comp").innerHTML= "Paper"
+                    } else {
+                        document.getElementById("comp").innerHTML= "Scissors"
+                    }
+                    document.getElementById("play").innerHTML= "Scissors"
+                    document.getElementById("player").innerHTML= playerscore
+                    document.getElementById("computer").innerHTML= computerscore
+                }
+            }
+            function Reset(){
+                count = 0
+                document.getElementById("rock").style.backgroundColor="whitesmoke"
+                document.getElementById("paper").style.backgroundColor="whitesmoke"
+                document.getElementById("scissor").style.backgroundColor= "whitesmoke"
+                document.getElementById("play").innerHTML= ""
+                document.getElementById("comp").innerHTML= ""
+            }
+            function ResetScore(){
+                count = 0
+                document.getElementById("rock").style.backgroundColor="whitesmoke"
+                document.getElementById("paper").style.backgroundColor="whitesmoke"
+                document.getElementById("scissor").style.backgroundColor= "whitesmoke"
+                playerscore=0
+                computerscore=0
+                document.getElementById("player").innerHTML= playerscore
+                document.getElementById("computer").innerHTML= computerscore
+                document.getElementById("play").innerHTML= ""
+                document.getElementById("comp").innerHTML= ""
+            }
+        </script>
+    </body>
+</html>

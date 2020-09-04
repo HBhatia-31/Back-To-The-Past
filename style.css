@@ -1,0 +1,63 @@
+body{
+    background-image: url(//i.imgur.com/OvTveVL.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#container {
+    width: 800px;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    color: black;
+    background-color: white;
+}
+#co{
+    width: 50%;
+    float: right;
+}
+#pl{
+    width: 50%;
+    float: left;
+}
+#header{
+    font-family: cursive;
+}
+
+#Actual{
+    font-family: cursive;
+    height: 200px;
+    padding-bottom: 20px;
+}
+
+#Footer{
+    padding-bottom: 25px;
+}
+
+.tab{
+    padding-left: 25px;
+}
+
+.center{
+    text-align: center;
+}
+.tab2{
+    padding-left: 50px;
+}
+.by3{
+    width: 120px;
+    height: 50px;
+    font-size: 50px;
+    color: black;
+    margin-left: 162.5px;
+    background-color: whitesmoke;
+}
+
+.by2{
+    width: 120px;
+    height: 50px;
+    color: black;
+    margin-left: 186.6px;
+    background-color: whitesmoke;
+}
